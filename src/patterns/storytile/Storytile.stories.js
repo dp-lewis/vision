@@ -1,71 +1,52 @@
-import { Storytile } from './Storytile';
-import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
-import { afrTheme } from '../../themes/afrTheme';
-
-
-const BasicStorytile = styled(Storytile)`
-    display: grid;
-    grid-column-gap: ${props => props.theme.spacing.medium};
-    grid-template-columns: auto 1fr;
-
-  & h3 {
-    color: ${props => props.theme.colors.primary};
-    font-size: ${props => props.theme.typography.fontSize.medium};
-    font-family: ${props => props.theme.typography.fontFamily};
-  }
-    & img {
-        max-width: 100%;
-        grid-column-start: 1;
-        grid-row: 1 / span 20;
-    }
-`;
-
-const BigstoryWrapper = styled.div`
-  padding: ${props => props.theme.spacing.medium};
-
-  & h3 {
-    color: ${props => props.theme.colors.primary};
-    font-size: ${props => props.theme.typography.fontSize.large};
-    font-family: ${props => props.theme.typography.fontFamily};
-  }  
-`;
-
+import { StorytileBasic, StorytileBig, StorytileWide, StorytileEditorPick } from './Storytile.styles';
 
 export default {
   title: 'Patterns/Storytile',
-  component: Storytile,
+  component: StorytileBasic,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
   args: {
-    imageurl: 'https://placehold.co/600x400',
+    imageurl: 'https://placehold.co/125x125',
+    title: 'Woman bites, kicks alleged attacker to escape sexual assault on north shore',
+    standfirst: 'The 36-year-old woman was walking home from work when the man allegedly grabbed her from behind and pushed her into a garage door in Neutral Bay.',
   }
 };
 
-export const Default = {};
+export const Default = {
+};
 
-export const BigstoryStyles = {
-    decorators: [
-      (Story) => (
-          <BigstoryWrapper>
-            <Story />
-          </BigstoryWrapper>
-      ),
-    ],
-  };
+export const Big = {
+    args: {
+        imageurl: 'https://placehold.co/420x280',
+        tag: "General Insurance",
+        tagurl: "https://smh.com.au"
+      },
+      render: (args) => (
+          <StorytileBig {...args} />
+      ),      
+};
 
-  export const WithDirectStyling = {
-    render: (args) => (
-        <BasicStorytile {...args} />
-    ),
-  };  
+export const Wide = {
+    args: {
+        imageurl: 'https://placehold.co/445x295',
+        type: 'Opinion',
+      },
+      render: (args) => (
+          <StorytileWide {...args} />
+      ),      
+};
 
-  export const WithChildren = {
-    render: (args) => (
-        <Storytile {...args}>
-            <p>Here is some extra content passed as children!</p>
-        </Storytile>
-    ),
-  };  
+export const EditorsPick = {
+    args: {
+        imageurl: 'https://placehold.co/445x295',
+        title: "‘A thought bubble no one asked for’: After two strong years, Dutton is wobbling",
+        type: ""
+      },
+      render: (args) => (
+          <StorytileEditorPick {...args} />
+      ),      
+};
+
+

@@ -2,22 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Storytile = ({ 
-    title = 'Story title', 
-    standfirst = 'Standfirst for story', 
-    type = 'Type', 
-    tag = 'Tag', 
-    tagurl = '#', 
-    imageurl = '#', 
-    imagealt = 'Alt text',
+    className,
+    title,
+    standfirst,
+    type,
+    tag,
+    tagurl,
+    imageurl,
+    imagealt,
     children
 }) => {
   return (
-    <article>
-        <div>{ type } <a href={tagurl}>{tag}</a></div>
-        <h3>{ title }</h3>
-        <img src={ imageurl} alt={imagealt} />
-        <p>{ standfirst }</p>
-        { children }
+    <article className={className}>
+      {(type || tag) && (
+        <div className="meta">
+          {type && <strong>{type}</strong>}
+          {tag && <a href={tagurl}>{tag}</a>}
+        </div>
+      )}
+      {title && <h3>{title}</h3>}
+      {imageurl && <img src={imageurl} alt={imagealt} />}
+      {standfirst && <p>{standfirst}</p>}
+      <time>17 minutes ago</time>
+      { children }
     </article>
   );
 };
@@ -31,4 +38,14 @@ Storytile.propTypes = {
     imageurl: PropTypes.string,
     imagealt: PropTypes.string,
     children: PropTypes.node,
+};
+
+Storytile.defaultProps = {
+    title: undefined,
+    standfirst: undefined,
+    type: undefined,
+    tag: undefined,
+    tagurl: '#',
+    imageurl: undefined,
+    imagealt: 'Alt text',
 };

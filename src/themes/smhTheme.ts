@@ -1,3 +1,5 @@
+import { Secondary } from "../components/button/Button.stories";
+
 export const smhTheme = {
   colors: {
     primary: '#0A84FF',
@@ -16,14 +18,24 @@ export const smhTheme = {
   spacing: {
     small: '8px',
     medium: '16px',
-    large: '24px'
+    large: '24px',
+    xlarge: '32px'
   },
   typography: {
-    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    fontFamily: {
+      primary: '"abril-titling",Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif',
+      secondary: '"pt-serif",Georgia,serif'
+    },
+    fontWeight: {
+      light: 300,
+      regular: 400,
+      bold: 500
+    },
     fontSize: {
-      small: '12px',
+      small: '0.8125rem',
       medium: '16px',
-      large: '24px'
+      large: '1.75rem',
+      xlarge: '2.5rem'
     }
   }
 };

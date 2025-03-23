@@ -16,7 +16,8 @@ export const afrTheme = {
   spacing: {
     small: '8px',
     medium: '16px',
-    large: '24px'
+    large: '24px',
+    xlarge: '32px'
   },
   typography: {
     fontFamily: '"Georgia", Helvetica, Arial, sans-serif',
@@ -24,6 +25,11 @@ export const afrTheme = {
       small: '12px',
       medium: '16px',
       large: '24px'
-    }
+    },
+    fontWeight: {
+      light: 300,
+      regular: 400,
+      bold: 500
+    },
   }
 };
