@@ -1,5 +1,3 @@
-import { Secondary } from "../components/button/Button.stories";
-
 export const smhTheme = {
   colors: {
     primary: '#0A84FF',

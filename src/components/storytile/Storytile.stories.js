@@ -1,7 +1,7 @@
 import { StorytileBasic, StorytileBig, StorytileWide, StorytileEditorPick } from './Storytile.styles';
 
 export default {
-  title: 'Patterns/Storytile',
+  title: 'Components/Storytile',
   component: StorytileBasic,
   tags: ['autodocs'],
   parameters: {

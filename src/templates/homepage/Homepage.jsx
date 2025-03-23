@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Navigation } from '../../patterns/navigation/Navigation';
-import { StorytileBasic, StorytileBig, StorytileWide } from '../../patterns/storytile/Storytile.styles';
+import { StorytileBasic, StorytileBig, StorytileWide } from '../../components/storytile/Storytile.styles';
 
 // A mapping from JSON "component" values to actual components.
 const storytileComponents = {
